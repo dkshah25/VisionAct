@@ -42,41 +42,6 @@ This makes it suitable for:
 
 ---
 
-## Architecture
-
-Screen Capture
-↓
-OpenCV (Visual Detection)
-↓
-Confidence Evaluation
-↓
-Decision Logic
-↓
-PyAutoGUI (Human-Like Interaction)
-
-
-Each layer is intentionally isolated to ensure clarity, safety, and extensibility.
-
----
-
-## Project Structure
-
-VisionAct/
-│
-├── src/
-│ ├── main.py # Core engine loop (decision logic)
-│ ├── vision.py # Screen analysis and detection
-│ ├── actions.py # Controlled UI interaction
-│ ├── config.py # Tunable safety parameters
-│
-├── assets/
-│ └── target.png # Reference UI element
-│
-├── requirements.txt
-└── README.md
-
----
-
 ## How It Works
 
 1. A screenshot of the current screen is captured.  
@@ -105,7 +70,7 @@ This separation avoids hard-coded behavior and enables safe tuning.
 
 ```bash
 pip install -r requirements.txt
-
+```
 ---
 
 ## Running VisionAct
@@ -117,6 +82,8 @@ pip install -r requirements.txt
 
 ```bash
 python src/main.py
+```
+
 VisionAct will continuously observe the screen and act only when the target element is confidently detected.
 
 ---
